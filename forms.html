@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários HTML5 - Exemplo Completo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0 auto; max-width: 1200px; }
+        form { border: 1px solid #ccc; padding: 20px; border-radius: 5px; max-width: 800px; }
+        fieldset { margin-bottom: 20px; padding: 15px; }
+        label { display: inline-block; width: 150px; margin-bottom: 10px; }
+        input, select, textarea { margin-bottom: 10px; padding: 5px; }
+        .note { color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <header id="topo">
+        <h1>Formulários HTML5: Todos os Campos e Atributos</h1>
+        <p>Este exemplo reúne <strong>todos os tipos de input</strong>, elementos de formulário e seus principais atributos.</p>
+    </header>
+
+    <nav aria-label="Menu principal">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="media.html">Mídia</a></li>
+            <li><a href="tables.html">Tabelas</a></li>
+            <li><a href="forms.html" aria-current="page">Formulários</a></li>
+            <li><a href="extras.html">Extras</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Exemplo de Formulário com Todos os Campos</h2>
+
+        <!-- 
+            FORM: Atributos principais
+            - action: URL de envio
+            - method: GET ou POST
+            - enctype: tipo de codificação (importante para arquivos)
+            - autocomplete: ativa/desativa preenchimento automático
+            - novalidate: desativa validação nativa
+            - target: onde abrir a resposta
+        -->
+        <form action="/enviar" method="post" enctype="multipart/form-data" autocomplete="on" novalidate target="_blank">
+            
+            <!-- ========== DADOS PESSOAIS ========== -->
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+
+                <!-- Text -->
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required minlength="3" maxlength="100" pattern="[A-Za-zÀ-ú\s]+" title="Apenas letras e espaços" autofocus>
+                <span class="note"> (text, required, pattern, minlength, maxlength, autofocus)</span>
+                <br>
+
+                <!-- Email -->
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required multiple>
+                <span class="note"> (email, required, multiple)</span>
+                <br>
+
+                <!-- Password -->
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" required minlength="8" maxlength="20" autocomplete="off">
+                <span class="note"> (password, minlength, maxlength, autocomplete=off)</span>
+                <br>
+
+                <!-- Tel -->
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}">
+                <span class="note"> (tel, pattern)</span>
+                <br>
+
+                <!-- Number -->
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" min="1" max="120" step="1" value="25">
+                <span class="note"> (number, min, max, step, value)</span>
+                <br>
+
+                <!-- Range -->
+                <label for="satisfacao">Satisfação (0-10):</label>
+                <input type="range" id="satisfacao" name="satisfacao" min="0" max="10" value="7" oninput="this.nextElementSibling.value = this.value">
+                <output>7</output>
+                <span class="note"> (range com output dinâmico)</span>
+                <br>
+
+                <!-- Color -->
+                <label for="cor">Cor favorita:</label>
+                <input type="color" id="cor" name="cor" value="#ff0000">
+                <span class="note"> (color, value)</span>
+                <br>
+
+                <!-- Date -->
+                <label for="nascimento">Data de nascimento:</label>
+                <input type="date" id="nascimento" name="nascimento" min="1900-01-01" max="2025-12-31">
+                <span class="note"> (date, min, max)</span>
+                <br>
+
+                <!-- Time -->
+                <label for="horario">Horário preferido:</label>
+                <input type="time" id="horario" name="horario" step="600">
+                <span class="note"> (time, step=600 = 10 minutos)</span>
+                <br>
+
+                <!-- Datetime-local -->
+                <label for="momento">Data e hora do evento:</label>
+                <input type="datetime-local" id="momento" name="momento">
+                <span class="note"> (datetime-local)</span>
+                <br>
+
+                <!-- Month -->
+                <label for="mes">Mês de início:</label>
+                <input type="month" id="mes" name="mes">
+                <span class="note"> (month)</span>
+                <br>
+
+                <!-- Week -->
+                <label for="semana">Semana:</label>
+                <input type="week" id="semana" name="semana">
+                <span class="note"> (week)</span>
+                <br>
+            </fieldset>
+
+            <!-- ========== ARQUIVOS E MÍDIA ========== -->
+            <fieldset>
+                <legend>Arquivos e Mídia</legend>
+
+                <!-- File -->
+                <label for="foto">Foto de perfil:</label>
+                <input type="file" id="foto" name="foto" accept="image/png, image/jpeg" capture="user" multiple>
+                <span class="note"> (file, accept, capture, multiple)</span>
+                <br>
+
+                <!-- URL -->
+                <label for="site">Site pessoal:</label>
+                <input type="url" id="site" name="site" placeholder="https://exemplo.com" pattern="https?://.+">
+                <span class="note"> (url, pattern)</span>
+                <br>
+
+                <!-- Image (botão de imagem) -->
+                <label for="imagem">Clique na imagem:</label>
+                <input type="image" id="imagem" src="botao.png" alt="Enviar" width="100" height="40">
+                <span class="note"> (image, src, alt)</span>
+                <br>
+            </fieldset>
+
+            <!-- ========== OPÇÕES E SELEÇÕES ========== -->
+            <fieldset>
+                <legend>Opções e Preferências</legend>
+
+                <!-- Checkbox -->
+                <input type="checkbox" id="newsletter" name="newsletter" value="sim" checked>
+                <label for="newsletter" style="width:auto;">Desejo receber newsletter</label>
+                <span class="note"> (checkbox, checked)</span>
+                <br>
+
+                <!-- Radio -->
+                <label style="width:auto;">Gênero:</label>
+                <input type="radio" id="genero_m" name="genero" value="masculino">
+                <label for="genero_m" style="width:auto;">Masculino</label>
+                <input type="radio" id="genero_f" name="genero" value="feminino" checked>
+                <label for="genero_f" style="width:auto;">Feminino</label>
+                <input type="radio" id="genero_o" name="genero" value="outro">
+                <label for="genero_o" style="width:auto;">Outro</label>
+                <span class="note"> (radio, checked)</span>
+                <br>
+
+                <!-- Select simples -->
+                <label for="pais">País:</label>
+                <select id="pais" name="pais" required>
+                    <option value="">Selecione...</option>
+                    <option value="br" selected>Brasil</option>
+                    <option value="pt">Portugal</option>
+                    <option value="us">Estados Unidos</option>
+                </select>
+                <span class="note"> (select, option, selected)</span>
+                <br>
+
+                <!-- Select com optgroup e múltipla escolha -->
+                <label for="interesses">Interesses (múltiplo):</label>
+                <select id="interesses" name="interesses" multiple size="4">
+                    <optgroup label="Tecnologia">
+                        <option value="html">HTML5</option>
+                        <option value="css">CSS3</option>
+                        <option value="js">JavaScript</option>
+                    </optgroup>
+                    <optgroup label="Design">
+                        <option value="ux">UX</option>
+                        <option value="ui">UI</option>
+                    </optgroup>
+                </select>
+                <span class="note"> (select multiple, optgroup)</span>
+                <br>
+
+                <!-- Datalist (autocomplete) -->
+                <label for="cidade">Cidade:</label>
+                <input list="cidades" id="cidade" name="cidade">
+                <datalist id="cidades">
+                    <option value="São Paulo">
+                    <option value="Rio de Janeiro">
+                    <option value="Belo Horizonte">
+                    <option value="Brasília">
+                </datalist>
+                <span class="note"> (datalist)</span>
+                <br>
+
+                <!-- Textarea -->
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="Digite sua mensagem..." maxlength="500" wrap="soft"></textarea>
+                <span class="note"> (textarea, rows, cols, maxlength, wrap)</span>
+                <br>
+            </fieldset>
+
+            <!-- ========== CONTROLES AVANÇADOS ========== -->
+            <fieldset>
+                <legend>Controles Avançados</legend>
+
+                <!-- Hidden -->
+                <input type="hidden" id="token" name="token" value="abc123">
+                <span class="note"> (hidden)</span>
+                <br>
+
+                <!-- Search -->
+                <label for="busca">Busca:</label>
+                <input type="search" id="busca" name="busca" placeholder="Pesquisar..." results="10">
+                <span class="note"> (search, results - obsoleto, mas ilustrativo)</span>
+                <br>
+
+                <!-- Progress e Meter fora do formulário, mas relacionados -->
+                <label>Progresso da tarefa:</label>
+                <progress id="progresso" value="70" max="100">70%</progress>
+                <span class="note"> (progress)</span>
+                <br>
+
+                <label>Nível de bateria:</label>
+                <meter id="bateria" value="0.6" min="0" max="1" low="0.2" high="0.8" optimum="0.9">60%</meter>
+                <span class="note"> (meter, min, max, low, high, optimum)</span>
+                <br>
+            </fieldset>
+
+            <!-- ========== BOTÕES ========== -->
+            <fieldset>
+                <legend>Botões</legend>
+
+                <!-- Submit -->
+                <button type="submit" name="enviar" value="enviar_form">Enviar (submit)</button>
+                <span class="note"> (button type=submit, name, value)</span>
+                <br><br>
+
+                <!-- Button com atributos de formulário -->
+                <button type="submit" formaction="/enviar-outro" formmethod="get" formtarget="_self" formenctype="application/x-www-form-urlencoded">
+                    Enviar para outro endpoint
+                </button>
+                <span class="note"> (formaction, formmethod, formtarget, formenctype)</span>
+                <br><br>
+
+                <!-- Reset -->
+                <button type="reset">Limpar (reset)</button>
+                <span class="note"> (type=reset)</span>
+                <br><br>
+
+                <!-- Button simples -->
+                <button type="button" onclick="alert('Botão clicado!')">Clique aqui (button)</button>
+                <span class="note"> (type=button, onclick)</span>
+                <br><br>
+
+                <!-- Botão desabilitado -->
+                <button type="button" disabled>Desabilitado</button>
+                <span class="note"> (disabled)</span>
+                <br>
+            </fieldset>
+
+            <!-- ========== ATRIBUTOS ADICIONAIS ========== -->
+            <fieldset>
+                <legend>Atributos diversos</legend>
+
+                <label for="readonly">Campo somente leitura:</label>
+                <input type="text" id="readonly" name="readonly" value="Não editável" readonly>
+                <span class="note"> (readonly)</span>
+                <br>
+
+                <label for="disabled">Campo desabilitado:</label>
+                <input type="text" id="disabled" name="disabled" value="Desabilitado" disabled>
+                <span class="note"> (disabled)</span>
+                <br>
+
+                <label for="size">Tamanho (size=30):</label>
+                <input type="text" id="size" name="size" size="30" placeholder="30 caracteres visíveis">
+                <span class="note"> (size)</span>
+                <br>
+
+                <label for="autocomplete_off">Autocomplete desligado:</label>
+                <input type="text" id="autocomplete_off" name="autocomplete_off" autocomplete="off">
+                <span class="note"> (autocomplete=off)</span>
+                <br>
+
+                <label for="spellcheck">Correção ortográfica:</label>
+                <input type="text" id="spellcheck" name="spellcheck" spellcheck="true">
+                <span class="note"> (spellcheck)</span>
+                <br>
+
+                <label for="dir">Direção do texto:</label>
+                <input type="text" id="dir" name="dir" dir="rtl" placeholder="Texto da direita">
+                <span class="note"> (dir)</span>
+                <br>
+
+                <label for="inputmode">Inputmode (teclado):</label>
+                <input type="text" id="inputmode" name="inputmode" inputmode="numeric" pattern="[0-9]*">
+                <span class="note"> (inputmode=numeric)</span>
+                <br>
+            </fieldset>
+
+            <!-- Output para exibir resultados -->
+            <fieldset>
+                <legend>Resultados</legend>
+                <label for="resultado">Resultado da soma:</label>
+                <input type="number" id="a" value="10"> +
+                <input type="number" id="b" value="20"> =
+                <output name="resultado" for="a b">30</output>
+                <br>
+                <span class="note"> (output com atributo for)</span>
+            </fieldset>
+        </form>
+
+        <h3>Observações:</h3>
+        <ul>
+            <li>O atributo <code>novalidate</code> no form desativa a validação nativa do navegador para testar padrões.</li>
+            <li>O atributo <code>autocomplete</code> pode ser "on" ou "off" por campo.</li>
+            <li>O elemento <code>&lt;output&gt;</code> é usado para exibir resultados de cálculos.</li>
+            <li>O <code>&lt;progress&gt;</code> e <code>&lt;meter&gt;</code> não precisam estar dentro do form, mas são relacionados.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Exemplo Didático HTML5</p>
+        <p><a href="#topo">Voltar ao topo</a></p>
+    </footer>
+</body>
+</html>

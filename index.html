@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exemplo completo de todas as tags HTML5">
+    <title>HTML5 Complete Example</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .destaque { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <header id="topo" class="cabecalho">
+        <h1>HTML5: Todas as Tags e Atributos</h1>
+        <p>Este site demonstra o uso de <strong>todas</strong> as tags HTML5 e seus principais atributos.</p>
+        <nav aria-label="Menu principal">
+        <ul>
+            <li><a href="index.html" title="Página inicial" target="_self">Início</a></li>
+            <li><a href="about.html" rel="next">Sobre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="media.html">Mídia</a></li>
+            <li><a href="tables.html">Tabelas</a></li>
+            <li><a href="forms.html">Formulários</a></li>
+            <li><a href="extras.html" hreflang="pt-BR" accesskey="e">Extras</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main role="main">
+        <section id="introducao" aria-labelledby="intro-titulo">
+            <h2 id="intro-titulo">Introdução</h2>
+            <p>Este site contém exemplos de <mark>todas as tags HTML5</mark> (semânticas e não semânticas), com seus atributos mais comuns. Cada página explora um grupo específico de elementos.</p>
+        </section>
+
+        <article id="destaque" data-categoria="exemplo">
+            <header>
+                <h3>Último post do blog</h3>
+                <p>Publicado em <time datetime="2025-03-19T10:00">19 de março de 2025</time></p>
+            </header>
+            <p>Confira nosso <a href="post.html?post=1" hreflang="pt-BR" ping="https://analytics.exemplo.com">último artigo</a> sobre formulários HTML5.</p>
+            <footer>
+                <p>Escrito por <address>João Silva</address></p>
+            </footer>
+        </article>
+    </main>
+
+    <aside class="sidebar">
+        <h4>Links úteis</h4>
+        <ul>
+            <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">MDN</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>&copy; 2025 - Todos os direitos reservados.</p>
+        <address>
+            <a href="mailto:contato@exemplo.com" title="Envie um e-mail">contato@exemplo.com</a>
+        </address>
+    </footer>
+</body>
+</html>

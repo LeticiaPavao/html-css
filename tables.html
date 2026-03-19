@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+</head>
+<body>
+    <header><h1>Tabelas em HTML5</h1></header>
+    <nav>...</nav>
+    <main>
+        <table border="1" cellpadding="5" summary="Tabela de preços de produtos">
+            <caption>Preços de produtos</caption>
+            <colgroup>
+                <col span="2" style="background-color:lightgray">
+                <col style="background-color:yellow">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2">Produto</th>
+                    <th colspan="2">Preços</th>
+                    <th rowspan="2">Estoque</th>
+                </tr>
+                <tr>
+                    <th>À vista</th>
+                    <th>Prazo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Notebook</td>
+                    <td>R$ 3000</td>
+                    <td>R$ 3300</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                    <td>R$ 50</td>
+                    <td>R$ 60</td>
+                    <td>50</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Última atualização: 19/03/2025</td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <footer>...</footer>
+</body>
+</html>

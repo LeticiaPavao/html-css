@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Extras</title>
+</head>
+<body>
+    <header><h1>Extras</h1></header>
+    <nav>...</nav>
+    <main>
+        <h2>Detalhes e sumário</h2>
+        <details open>
+            <summary>Clique para expandir</summary>
+            <p>Conteúdo oculto que agora aparece.</p>
+        </details>
+
+        <h2>Div e Span</h2>
+        <div class="container" data-info="exemplo" contenteditable="true" dir="ltr" hidden>
+            <p>Este <span style="color:red;">texto</span> está dentro de uma div.</p>
+        </div>
+
+        <h2>Template e Slot (Web Components)</h2>
+        <template id="meu-template">
+            <p>Conteúdo do template</p>
+        </template>
+        <slot name="slot1">Fallback content</slot>
+
+        <h2>Noscript</h2>
+        <noscript>Seu navegador não suporta JavaScript ou está desabilitado.</noscript>
+    </main>
+    <footer>...</footer>
+</body>
+</html>
