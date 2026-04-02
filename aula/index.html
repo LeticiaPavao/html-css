@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <link rel="stylesheet" href="global.css"> <!-- Link para o arquivo CSS -->
+    <title>Document</title>
+</head>
+
+<body style="background-color: lightblue;"> <!-- Cor de fundo da página -->
+    <header>
+        <h1>Olá, eu sou a Letícia!</h1>
+        <p>Estudante de <strong>Programação Web</strong> e apaixonada por tecnologia e <em>design</em> digital.</p>
+    </header>
+    <main>
+        <section class="container">
+            <h1>Bem vindo à minha página</h1>
+            <p>Olá, mundo! Estou aprendendo <font color="red" aria-placeholder="Estou aprendendo">HTML e CSS</font>
+            </p>
+        </section>
+        <section class="containerDois">
+            <h2>Sobre mim</h2>
+            <p>Sou um estudante de desenvolvimento web e estou animado para criar mais páginas incríveis!</p>
+        </section>
+        <section class="containerDois">
+            <h2>Meus hobbies</h2>
+            <ul>
+                <li>Programação</li>
+                <li>Jogos</li>
+                <li>Viajar</li>
+            </ul>
+        </section>
+        <section class="containerDois">
+            <h2>Contato</h2>
+            <p>Você pode me encontrar no LinkedIn ou enviar um email para
+                <a href="mailto:g1e2K@example.com">g1e2K@example.com</a>
+            </p>
+        </section>
+        <section>
+            <h2>Inserindo imagens</h2>
+            <h3>Imagem com atributos</h3>
+            <img src="https://plus.unsplash.com/premium_photo-1774561391246-3701734033f9?q=80&w=788&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Imagem com atributos" width="400" height="300">
+            <h3>Imagem sem atributos</h3>
+            <img src="https://plus.unsplash.com/premium_photo-1774561391246-3701734033f9?q=80&w=788&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Imagem de exemplo">
+            <h3>Imagem direto da pasta</h3>
+            <img src="imagem.jpeg" alt="Imagem de exemplo">
+        </section>
+        <section>
+            <h2>Inserindo áudio</h2>
+            <audio controls preload="metadata">
+                <source src="audio.mp3" type="audio/mpeg"> <!-- Formato principal -->
+                <source src="audio.ogg" type="audio/ogg"> <!-- Formatos alternativos para compatibilidade -->
+                <!-- Mensagem de fallback caso o navegador não suporte nenhum dos formatos -->
+                <p>Seu navegador não suporta áudio.
+                    <a href="audio.mp3">Baixe o áudio aqui</a>. <!-- Link para download caso o navegador não suporte -->
+                </p>
+            </audio>
+        </section>
+        <section>
+            <h2>Inserindo vídeo</h2>
+            <video controls preload="metadata" width="200" height="200" poster="imagem.jpeg">
+                <!-- Metadata para compatibilidade com dispositivos móveis -->
+                <source src="video.mp4" type="video/mp4"> <!-- Formato principal -->
+                <source src="video.webm" type="video/webm"> <!-- Formatos alternativos para compatibilidade -->
+                <!-- Mensagem de fallback caso o navegador não suporte nenhum dos formatos -->
+                <p>Seu navegador não suporta vídeo.
+                    <a href="video.mp4">Baixe o vídeo aqui</a>. <!-- Link para download caso o navegador não suporte -->
+                </p>
+            </video>
+        </section>
+    </main>
+</body>
+
+</html>
