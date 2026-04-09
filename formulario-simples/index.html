@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário simples</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Formulário de Contato</h1>
+            <p>Preencha o formulário abaixo para entrar em contato conosco.</p>
+        </header>
+        <main>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Informações pessoais</legend>
+
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" value
+                        placeholder="Digite seu nome" required>
+                    <br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"
+                        placeholder="Digite seu email" required>
+                    <br><br>
+
+                    <label for="codigo_usuario"> Código de usuário:</label>
+                    <input type="text" id="codigo_usuario" name="codigo_usuario"
+                        value="12345" readonly>
+                    <br><br>
+
+                    <label for="cargo">Cargo:</label>
+                    <input type="text" id="cargo" name="cargo"
+                        value="Desenvolvedor Web" disabled>
+                    <br><br>
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone"
+                        placeholder="Digite seu telefone">
+                    <br><br>
+
+                    <label for="avatar">Avatar:</label>
+                    <input type="file" id="avatar" name="avatar"
+                        accept="image/*">
+                    <br><br>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Adicionais:</legend>
+
+                    <label for="materia_preferida">Materia preferida:</label>
+                    <select id="materia_preferida" name="materia_preferida">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                    </select>
+                    <br><br>
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" cols="50"
+                        required></textarea>
+                    <br><br>
+
+                    <input type="checkbox" id="newsletter" name="newsletter"
+                        checked>
+                    <label for="newsletter">Desejo receber novidades por
+                        email</label>
+                    <br><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Progresso e avaliação</legend>
+
+                    <label for="progresso">Progresso:</label>
+                    <progress id="progresso" value="70" max="100"></progress>
+                    <span>70%</span>
+                    <br><br>
+
+                    <label for="nota">Nota:</label>
+                    <meter id="nota" value="8" min="0" max="10"></meter>
+                    <span>8/10</span>
+                    <br><br>
+
+                    <output name="resultado" for="progresso nota">
+                        Progresso: 70% - Nota: 8
+                    </output>
+                </fieldset>
+
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+        </footer>
+    </body>
+</html>
