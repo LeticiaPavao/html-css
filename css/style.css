@@ -3,13 +3,21 @@ body {
     margin: 0 auto;
     padding: 0;
     max-width: 1200px;
-
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
+
 header, nav, main, aside, footer {
     padding: 1rem;
     margin: 0.5rem;
     border: 1px dashed #ccc;
 }
+
+header, nav, footer {
+    flex-basis: 100%;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -17,4 +25,12 @@ nav ul {
 nav li {
     display: inline;
     margin-right: 1rem;
+}
+
+main {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
 }
