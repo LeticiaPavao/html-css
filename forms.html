@@ -1,35 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Formulários HTML5 - Exemplo Completo</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0 auto; max-width: 1200px; }
-        form { border: 1px solid #ccc; padding: 20px; border-radius: 5px; max-width: 800px; }
-        fieldset { margin-bottom: 20px; padding: 15px; }
-        label { display: inline-block; width: 150px; margin-bottom: 10px; }
-        input, select, textarea { margin-bottom: 10px; padding: 5px; }
-        .note { color: #666; font-size: 0.9em; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 800px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .note {
+            color: #666;
+            font-size: 0.9em;
+        }
     </style>
 </head>
+
 <body>
     <header id="topo">
         <h1>Formulários HTML5: Todos os Campos e Atributos</h1>
-        <p>Este exemplo reúne <strong>todos os tipos de input</strong>, elementos de formulário e seus principais atributos.</p>
+        <p>Este exemplo reúne <strong>todos os tipos de input</strong>, elementos de formulário e seus principais
+            atributos.</p>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html" title="Página inicial" target="_self">Início</a></li>
+                <li><a href="about.html" rel="next">Sobre</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="media.html">Mídia</a></li>
+                <li><a href="tables.html">Tabelas</a></li>
+                <li><a href="forms.html">Formulários</a></li>
+                <li><a href="extras.html" hreflang="pt-BR" accesskey="e">Extras</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav aria-label="Menu principal">
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="about.html">Sobre</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="media.html">Mídia</a></li>
-            <li><a href="tables.html">Tabelas</a></li>
-            <li><a href="forms.html" aria-current="page">Formulários</a></li>
-            <li><a href="extras.html">Extras</a></li>
-        </ul>
-    </nav>
 
     <main>
         <h2>Exemplo de Formulário com Todos os Campos</h2>
@@ -44,14 +77,15 @@
             - target: onde abrir a resposta
         -->
         <form action="/enviar" method="post" enctype="multipart/form-data" autocomplete="on" novalidate target="_blank">
-            
+
             <!-- ========== DADOS PESSOAIS ========== -->
             <fieldset>
                 <legend>Dados Pessoais</legend>
 
                 <!-- Text -->
                 <label for="nome">Nome completo:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required minlength="3" maxlength="100" pattern="[A-Za-zÀ-ú\s]+" title="Apenas letras e espaços" autofocus>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required minlength="3"
+                    maxlength="100" pattern="[A-Za-zÀ-ú\s]+" title="Apenas letras e espaços" autofocus>
                 <span class="note"> (text, required, pattern, minlength, maxlength, autofocus)</span>
                 <br>
 
@@ -63,13 +97,15 @@
 
                 <!-- Password -->
                 <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" required minlength="8" maxlength="20" autocomplete="off">
+                <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" required minlength="8"
+                    maxlength="20" autocomplete="off">
                 <span class="note"> (password, minlength, maxlength, autocomplete=off)</span>
                 <br>
 
                 <!-- Tel -->
                 <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}">
+                <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999"
+                    pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}">
                 <span class="note"> (tel, pattern)</span>
                 <br>
 
@@ -81,7 +117,8 @@
 
                 <!-- Range -->
                 <label for="satisfacao">Satisfação (0-10):</label>
-                <input type="range" id="satisfacao" name="satisfacao" min="0" max="10" value="7" oninput="this.nextElementSibling.value = this.value">
+                <input type="range" id="satisfacao" name="satisfacao" min="0" max="10" value="7"
+                    oninput="this.nextElementSibling.value = this.value">
                 <output>7</output>
                 <span class="note"> (range com output dinâmico)</span>
                 <br>
@@ -208,7 +245,8 @@
 
                 <!-- Textarea -->
                 <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="Digite sua mensagem..." maxlength="500" wrap="soft"></textarea>
+                <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="Digite sua mensagem..."
+                    maxlength="500" wrap="soft"></textarea>
                 <span class="note"> (textarea, rows, cols, maxlength, wrap)</span>
                 <br>
             </fieldset>
@@ -250,7 +288,8 @@
                 <br><br>
 
                 <!-- Button com atributos de formulário -->
-                <button type="submit" formaction="/enviar-outro" formmethod="get" formtarget="_self" formenctype="application/x-www-form-urlencoded">
+                <button type="submit" formaction="/enviar-outro" formmethod="get" formtarget="_self"
+                    formenctype="application/x-www-form-urlencoded">
                     Enviar para outro endpoint
                 </button>
                 <span class="note"> (formaction, formmethod, formtarget, formenctype)</span>
@@ -326,10 +365,12 @@
 
         <h3>Observações:</h3>
         <ul>
-            <li>O atributo <code>novalidate</code> no form desativa a validação nativa do navegador para testar padrões.</li>
+            <li>O atributo <code>novalidate</code> no form desativa a validação nativa do navegador para testar padrões.
+            </li>
             <li>O atributo <code>autocomplete</code> pode ser "on" ou "off" por campo.</li>
             <li>O elemento <code>&lt;output&gt;</code> é usado para exibir resultados de cálculos.</li>
-            <li>O <code>&lt;progress&gt;</code> e <code>&lt;meter&gt;</code> não precisam estar dentro do form, mas são relacionados.</li>
+            <li>O <code>&lt;progress&gt;</code> e <code>&lt;meter&gt;</code> não precisam estar dentro do form, mas são
+                relacionados.</li>
         </ul>
     </main>
 
@@ -338,4 +379,5 @@
         <p><a href="#topo">Voltar ao topo</a></p>
     </footer>
 </body>
+
 </html>

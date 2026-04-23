@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Sobre - HTML5 Complete</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <h1>Sobre este projeto</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html" title="Página inicial" target="_self">Início</a></li>
+                <li><a href="about.html" rel="next">Sobre</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="media.html">Mídia</a></li>
+                <li><a href="tables.html">Tabelas</a></li>
+                <li><a href="forms.html">Formulários</a></li>
+                <li><a href="extras.html" hreflang="pt-BR" accesskey="e">Extras</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav> <!-- mesmo menu, omitido para brevidade --> </nav>
+    
     <main>
         <section>
             <h2>Demonstração de tags de texto</h2>
-            <p>Este parágrafo contém <strong>texto forte</strong>, <em>ênfase</em>, <mark>destacado</mark>, <small>pequeno</small>, <del>deletado</del> e <ins>inserido</ins>.</p>
+            <p>Este parágrafo contém <strong>texto forte</strong>, <em>ênfase</em>, <mark>destacado</mark>,
+                <small>pequeno</small>, <del>deletado</del> e <ins>inserido</ins>.
+            </p>
             <p>Exemplo de abreviação: <abbr title="HyperText Markup Language">HTML</abbr>.</p>
             <p>Citação longa:</p>
             <blockquote cite="https://www.exemplo.com/frase">
@@ -33,9 +48,18 @@
             <p><dfn>HTML</dfn> é a linguagem de marcação.</p>
             <p>Texto bidirecional: <bdi>الرجل</bdi> entrou.</p>
             <p>Texto com direção: <bdo dir="rtl">Este texto é da direita para esquerda</bdo>.</p>
-            <p>Anotação Ruby: <ruby>漢 <rp>(</rp><rt>Kan</rt><rp>)</rp></ruby></p>
+            <p>Anotação Ruby: <ruby>漢 <rp>(</rp>
+                    <rt>Kan</rt>
+                    <rp>)</rp>
+                </ruby></p>
         </section>
     </main>
-    <footer>...</footer>
+    <footer>
+        <p>&copy; 2026 - Todos os direitos reservados.</p>
+        <address>
+            <a href="mailto:contato@exemplo.com" title="Envie um e-mail">contato@exemplo.com</a>
+        </address>
+    </footer>
 </body>
+
 </html>
